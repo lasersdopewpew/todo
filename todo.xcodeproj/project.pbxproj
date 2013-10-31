@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042ECE4D1821F20300E700B6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 042ECE4C1821F20300E700B6 /* Default.png */; };
+		042ECE4F1821F21600E700B6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 042ECE4E1821F21600E700B6 /* Default@2x.png */; };
 		04DF75C218217BAA0039F2EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DF75C118217BAA0039F2EE /* UIKit.framework */; };
 		04DF75C418217BAA0039F2EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DF75C318217BAA0039F2EE /* Foundation.framework */; };
 		04DF75C618217BAA0039F2EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DF75C518217BAA0039F2EE /* CoreGraphics.framework */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		042ECE4C1821F20300E700B6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		042ECE4E1821F21600E700B6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		04DF75BE18217BAA0039F2EE /* todo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DF75C118217BAA0039F2EE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		04DF75C318217BAA0039F2EE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -84,6 +88,8 @@
 		04DF75B518217BAA0039F2EE = {
 			isa = PBXGroup;
 			children = (
+				042ECE4E1821F21600E700B6 /* Default@2x.png */,
+				042ECE4C1821F20300E700B6 /* Default.png */,
 				04DF75C718217BAA0039F2EE /* todo */,
 				04DF75E518217BAA0039F2EE /* todoTests */,
 				04DF75C018217BAA0039F2EE /* Frameworks */,
@@ -231,6 +237,8 @@
 				04DF75D618217BAA0039F2EE /* Default@2x.png in Resources */,
 				04DF75D818217BAA0039F2EE /* Default-568h@2x.png in Resources */,
 				04FA9B691821C62F00084C81 /* Main.storyboard in Resources */,
+				042ECE4D1821F20300E700B6 /* Default.png in Resources */,
+				042ECE4F1821F21600E700B6 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
