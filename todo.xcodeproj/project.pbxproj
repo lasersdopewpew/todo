@@ -25,6 +25,7 @@
 		04DF75E218217BAA0039F2EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DF75C318217BAA0039F2EE /* Foundation.framework */; };
 		04DF75EA18217BAA0039F2EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04DF75E818217BAA0039F2EE /* InfoPlist.strings */; };
 		04DF75ED18217BAA0039F2EE /* todoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DF75EC18217BAA0039F2EE /* todoTests.m */; };
+		04EEA2201823B1F400974B12 /* TodoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EEA21F1823B1F400974B12 /* TodoItem.m */; };
 		04FA9B691821C62F00084C81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FA9B681821C62F00084C81 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,8 @@
 		04DF75E918217BAA0039F2EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		04DF75EB18217BAA0039F2EE /* todoTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = todoTests.h; sourceTree = "<group>"; };
 		04DF75EC18217BAA0039F2EE /* todoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = todoTests.m; sourceTree = "<group>"; };
+		04EEA21E1823B1F400974B12 /* TodoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoItem.h; sourceTree = "<group>"; };
+		04EEA21F1823B1F400974B12 /* TodoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoItem.m; sourceTree = "<group>"; };
 		04FA9B681821C62F00084C81 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +134,8 @@
 				04FA9B681821C62F00084C81 /* Main.storyboard */,
 				042ECE561822072300E700B6 /* TodoListViewController.h */,
 				042ECE571822072300E700B6 /* TodoListViewController.m */,
+				04EEA21E1823B1F400974B12 /* TodoItem.h */,
+				04EEA21F1823B1F400974B12 /* TodoItem.m */,
 				042ECE50182203C300E700B6 /* AddToDoItemViewController.h */,
 				042ECE51182203C300E700B6 /* AddToDoItemViewController.m */,
 				04DF75C818217BAA0039F2EE /* Supporting Files */,
@@ -287,6 +292,7 @@
 				04DF75D218217BAA0039F2EE /* AppDelegate.m in Sources */,
 				042ECE52182203C300E700B6 /* AddToDoItemViewController.m in Sources */,
 				042ECE581822072300E700B6 /* TodoListViewController.m in Sources */,
+				04EEA2201823B1F400974B12 /* TodoItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
