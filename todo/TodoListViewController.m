@@ -19,13 +19,13 @@
 
 - (void)loadInitialData {
     TodoItem *item1 = [[TodoItem alloc] init];
-    item1.itemName = @"Buy milk";
+    item1.itemName = @"Купить молока";
     [self.toDoItems addObject:item1];
     TodoItem *item2 = [[TodoItem alloc] init];
-    item2.itemName = @"Buy eggs";
+    item2.itemName = @"Вычесать кота";
     [self.toDoItems addObject:item2];
     TodoItem *item3 = [[TodoItem alloc] init];
-    item3.itemName = @"Read a book";
+    item3.itemName = @"Полить цветок";
     [self.toDoItems addObject:item3];
 }
 
