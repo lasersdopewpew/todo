@@ -8,10 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TodoItem : NSObject
+@interface TodoItem : NSObject{
+    NSString *itemName;
+    BOOL completed;
+    NSDate *creationDate;
+}
+- (NSString*)itemName;
+- (void)setItemName: (NSString*)newValue;
 
-@property NSString *itemName;
-@property BOOL completed;
-@property (readonly) NSDate *creationDate;
+- (BOOL) completed;
+- (void) setCompleted: (BOOL)state;
+
+- (NSDate *) creationDate;
+
+
 
 @end

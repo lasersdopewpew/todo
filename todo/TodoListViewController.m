@@ -13,11 +13,19 @@
 
 @property NSMutableArray *toDoItems;
 
-@end
+@end	
 
 @implementation TodoListViewController
 
 - (void)loadInitialData {
+    
+    NSData *serialized = [NSKeyedArchiver archivedDataWithRootObject:_toDoItems];
+    [[NSUserDefaults standardUserDefaults] setObject:serialized forKey:@"myKey"];
+    
+    serialized = [[NSUserDefaults standardUserDefaults] objectForKey:@"myKey"];
+    _toDoItems = [NSKeyedUnarchiver unarchiveObjectWithData:serialized];
+    
+    
     TodoItem *item1 = [[TodoItem alloc] init];
     item1.itemName = @"Купить молока";
     [self.toDoItems addObject:item1];
@@ -48,6 +56,10 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)viewWillDisappear{
+    
 }
 
 - (void)didReceiveMemoryWarning
