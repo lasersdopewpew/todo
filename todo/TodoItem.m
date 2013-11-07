@@ -29,5 +29,14 @@
     return creationDate;
 }
 
++ (id) makeTodo:(NSString*)itemName completed:(BOOL)completed cretionDate:(NSDate *)creationDate{
+    TodoItem * result = [TodoItem new];
+    [result setItemName:itemName];
+    [result setCompleted:completed];
+    result->creationDate = creationDate;
+    
+    return result;
+}
+
 
 @end

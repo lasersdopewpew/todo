@@ -26,8 +26,7 @@
     _toDoItems = [NSKeyedUnarchiver unarchiveObjectWithData:serialized];
     
     
-    TodoItem *item1 = [[TodoItem alloc] init];
-    item1.itemName = @"Купить молока";
+    TodoItem * item1 =[TodoItem makeTodo:@"Купить молокaaа" completed:YES cretionDate:nil];
     [self.toDoItems addObject:item1];
     TodoItem *item2 = [[TodoItem alloc] init];
     item2.itemName = @"Вычесать кота";

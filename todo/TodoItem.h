@@ -21,6 +21,6 @@
 
 - (NSDate *) creationDate;
 
-
++ (id) makeTodo:(NSString*)itemName completed:(BOOL)completed cretionDate:(NSDate *)creationDate;
 
 @end
