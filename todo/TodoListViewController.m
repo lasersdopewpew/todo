@@ -100,6 +100,15 @@
     TodoItem *toDoItem = [self.toDoItems objectAtIndex:indexPath.row];
     cell.textLabel.text = toDoItem.itemName;
     
+    UILabel *label;
+    label = (UILabel *)[cell viewWithTag:2];
+    label.text = [NSString stringWithFormat:@"%d", indexPath.row];
+    
+    UIProgressView *prog;
+    prog = (UIProgressView *)[cell viewWithTag:3];
+    prog.progress = 0.2*indexPath.row;
+    
+    
     if (toDoItem.completed) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
