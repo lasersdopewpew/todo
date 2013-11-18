@@ -12,7 +12,7 @@
 @interface TodoListViewController ()
 
 @property NSMutableArray *toDoItems;
-
+    - (void)deleteLastItem;
 @end	
 
 @implementation TodoListViewController
@@ -44,6 +44,15 @@
     }
     return self;
 }
+- (IBAction)deleteAction:(id)sender {
+    [self deleteLastItem];
+}
+
+- (void)deleteLastItem
+{
+    [self.toDoItems removeLastObject];
+    [self.tableView reloadData];
+}
 
 - (void)viewDidLoad
 {
@@ -57,8 +66,9 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)viewWillDisappear{
-    
+- (void)viewWillAppear{
+    TodoItem * item =[TodoItem makeTodo:@"Новый элемент" completed:YES cretionDate:nil];
+    [self.toDoItems addObject:item];
 }
 
 - (void)didReceiveMemoryWarning
@@ -92,6 +102,15 @@
     return [self.toDoItems count];
 }
 
+
+- (void) actionLongPressGesture:(UILongPressGestureRecognizer*)sender
+{
+    UITableViewCell *cell = (UITableViewCell*)sender.view;
+    if (sender.state == UIGestureRecognizerStateRecognized){
+        NSLog(@"test: %@", cell.textLabel.text);
+    }
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ListPrototypeCell";
@@ -102,18 +121,25 @@
     
     UILabel *label;
     label = (UILabel *)[cell viewWithTag:2];
-    label.text = [NSString stringWithFormat:@"%d", indexPath.row];
+    label.text = [NSString stringWithFormat:@"%d", indexPath.row+1];
     
     UIProgressView *prog;
     prog = (UIProgressView *)[cell viewWithTag:3];
     prog.progress = 0.2*indexPath.row;
     
+    cell.imageView.image = [UIImage imageNamed:@"car.jpg"];
     
     if (toDoItem.completed) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
+    
+    //create UILongPressGestureRecognizer
+    UILongPressGestureRecognizer *longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(actionLongPressGesture:)];
+    //longPressGestureRecognizer.minimumPressDuration = 2.0;
+    [cell addGestureRecognizer:longPressGestureRecognizer];
+    ///////
     
     return cell;
 }
@@ -164,7 +190,12 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     TodoItem *tappedItem = [self.toDoItems objectAtIndex:indexPath.row];
     tappedItem.completed = !tappedItem.completed;
-    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
+    
+    
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    
+
+    
     
     // Navigation logic may go here. Create and push another view controller.
     /*
