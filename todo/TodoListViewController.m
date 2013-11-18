@@ -11,6 +11,7 @@
 
 @interface TodoListViewController ()
 
+@property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property NSMutableArray *toDoItems;
     - (void)deleteLastItem;
 @end	
@@ -108,6 +109,14 @@
     UITableViewCell *cell = (UITableViewCell*)sender.view;
     if (sender.state == UIGestureRecognizerStateRecognized){
         NSLog(@"test: %@", cell.textLabel.text);
+        NSIndexPath* pathOfTheCell = [self.myTableView indexPathForCell:cell];
+        NSInteger rowOfTheCell = [pathOfTheCell row];
+        if ([[self.toDoItems objectAtIndex:rowOfTheCell] completed])
+        {
+            [self.toDoItems removeObjectAtIndex:rowOfTheCell];
+            [self.tableView reloadData];
+        }
+        NSLog(@"row row: %d", rowOfTheCell);
     }
 }
 
