@@ -107,7 +107,7 @@
 - (void) actionLongPressGesture:(UILongPressGestureRecognizer*)sender
 {
     UITableViewCell *cell = (UITableViewCell*)sender.view;
-    if (sender.state == UIGestureRecognizerStateRecognized){
+    if (sender.state == UIGestureRecognizerStateBegan){
         NSLog(@"test: %@", cell.textLabel.text);
         NSIndexPath* pathOfTheCell = [self.myTableView indexPathForCell:cell];
         NSInteger rowOfTheCell = [pathOfTheCell row];
