@@ -112,9 +112,13 @@
         NSIndexPath* pathOfTheCell = [self.myTableView indexPathForCell:cell];
         NSInteger rowOfTheCell = [pathOfTheCell row];
         if ([[self.toDoItems objectAtIndex:rowOfTheCell] completed])
-        {
-            [self.toDoItems removeObjectAtIndex:rowOfTheCell];
-            [self.tableView reloadData];
+        {            
+            
+        [self.tableView beginUpdates];
+        [self.toDoItems removeObjectAtIndex:rowOfTheCell];
+        [self.tableView deleteRowsAtIndexPaths: [NSArray arrayWithObject:pathOfTheCell]
+                           withRowAnimation: UITableViewRowAnimationFade];
+        [self.tableView endUpdates];
         }
         NSLog(@"row row: %d", rowOfTheCell);
     }
@@ -146,7 +150,7 @@
     
     //create UILongPressGestureRecognizer
     UILongPressGestureRecognizer *longPressGestureRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(actionLongPressGesture:)];
-    //longPressGestureRecognizer.minimumPressDuration = 2.0;
+    longPressGestureRecognizer.minimumPressDuration = 0.8;
     [cell addGestureRecognizer:longPressGestureRecognizer];
     ///////
     
