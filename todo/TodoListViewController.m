@@ -18,6 +18,10 @@
 
 @implementation TodoListViewController
 
+-(void)viewWillAppear:(BOOL)animated{        
+    NSLog(@"appear");
+}
+
 - (void)loadInitialData {
     
     NSData *serialized = [NSKeyedArchiver archivedDataWithRootObject:_toDoItems];
@@ -30,11 +34,21 @@
     TodoItem * item1 =[TodoItem makeTodo:@"Купить молокaaа" completed:YES cretionDate:nil];
     [self.toDoItems addObject:item1];
     TodoItem *item2 = [[TodoItem alloc] init];
-    item2.itemName = @"Вычесать кота";
+    item2.itemName = @"Купить кота";
     [self.toDoItems addObject:item2];
     TodoItem *item3 = [[TodoItem alloc] init];
     item3.itemName = @"Полить цветок";
     [self.toDoItems addObject:item3];
+    
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    [numberFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    numberFormatter.locale = [NSLocale localeWithLocaleIdentifier:@"RU_ru"];
+    
+    [self.toDoItems addObject:[TodoItem makeTodo: [[NSString alloc] initWithFormat:@"Денег: %@",
+                                                   [numberFormatter stringFromNumber:@(1234.5678)]]
+                                       completed:YES
+                                     cretionDate:nil]];
+    
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
