@@ -39,4 +39,18 @@
 }
 
 
+- (void)encodeWithCoder:(NSCoder *)encoder {
+    //Encode properties, other class variables, etc
+    [encoder encodeObject:self.creationDate forKey:@"creationDate"];
+    [encoder encodeObject:self.itemName forKey:@"itemName"];
+}
+
+- (id)initWithCoder:(NSCoder *)decoder {
+    if((self = [super init])) {
+        //decode properties, other class vars
+        self.itemName = [decoder decodeObjectForKey:@"itemName"];
+    }
+    return self;
+}
+
 @end
