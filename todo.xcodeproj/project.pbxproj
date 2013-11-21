@@ -27,8 +27,8 @@
 		04DF75ED18217BAA0039F2EE /* todoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DF75EC18217BAA0039F2EE /* todoTests.m */; };
 		04EEA2201823B1F400974B12 /* TodoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EEA21F1823B1F400974B12 /* TodoItem.m */; };
 		04FA9B691821C62F00084C81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FA9B681821C62F00084C81 /* Main.storyboard */; };
-		841D51461832827700FC7B7A /* car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841D51451832827700FC7B7A /* car.jpg */; };
 		841D519B18352F2800FC7B7A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 841D519918352F2800FC7B7A /* Model.xcdatamodeld */; };
+		8485C433183E548100D216E6 /* car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8485C432183E548100D216E6 /* car.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,8 +70,8 @@
 		04EEA21E1823B1F400974B12 /* TodoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoItem.h; sourceTree = "<group>"; };
 		04EEA21F1823B1F400974B12 /* TodoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoItem.m; sourceTree = "<group>"; };
 		04FA9B681821C62F00084C81 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		841D51451832827700FC7B7A /* car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = car.jpg; path = ../../../Downloads/car.jpg; sourceTree = "<group>"; };
 		841D519A18352F2800FC7B7A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		8485C432183E548100D216E6 /* car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = car.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +134,6 @@
 		04DF75C718217BAA0039F2EE /* todo */ = {
 			isa = PBXGroup;
 			children = (
-				841D51451832827700FC7B7A /* car.jpg */,
 				04DF75D018217BAA0039F2EE /* AppDelegate.h */,
 				04DF75D118217BAA0039F2EE /* AppDelegate.m */,
 				04FA9B681821C62F00084C81 /* Main.storyboard */,
@@ -152,6 +151,7 @@
 		04DF75C818217BAA0039F2EE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8485C432183E548100D216E6 /* car.jpg */,
 				04DF75C918217BAA0039F2EE /* todo-Info.plist */,
 				04DF75CA18217BAA0039F2EE /* InfoPlist.strings */,
 				04DF75CD18217BAA0039F2EE /* main.m */,
@@ -256,8 +256,8 @@
 				04DF75CC18217BAA0039F2EE /* InfoPlist.strings in Resources */,
 				04DF75D418217BAA0039F2EE /* Default.png in Resources */,
 				04DF75D618217BAA0039F2EE /* Default@2x.png in Resources */,
-				841D51461832827700FC7B7A /* car.jpg in Resources */,
 				04DF75D818217BAA0039F2EE /* Default-568h@2x.png in Resources */,
+				8485C433183E548100D216E6 /* car.jpg in Resources */,
 				04FA9B691821C62F00084C81 /* Main.storyboard in Resources */,
 				042ECE4D1821F20300E700B6 /* Default.png in Resources */,
 				042ECE4F1821F21600E700B6 /* Default@2x.png in Resources */,
