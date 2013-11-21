@@ -14,6 +14,8 @@
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 @property NSMutableArray *toDoItems;
     - (void)deleteLastItem;
+- (void)saveCustomObject:(NSMutableArray *)object key:(NSString *)key;
+- (NSMutableArray *)loadCustomObjectWithKey:(NSString *)key;
 @end	
 
 @implementation TodoListViewController
@@ -22,15 +24,50 @@
     NSLog(@"appear");
 }
 
+- (void)encodeRestorableStateWithCoder:(NSCoder *)coder {
+    
+    [super encodeRestorableStateWithCoder:coder];
+    
+
+//[coder encodeInt:self.tableView forKey:MyViewControllerNumber];
+    
+}
+
+
+
+- (void)decodeRestorableStateWithCoder:(NSCoder *)coder {
+    
+    [super decodeRestorableStateWithCoder:coder];
+    
+    
+   // self.number = [coder decodeIntForKey:MyViewControllerNumber];
+    
+}
+
+- (void)saveCustomObject:(NSMutableArray *)object key:(NSString *)key {
+    NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:object];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:encodedObject forKey:key];
+    [defaults synchronize];
+    
+}
+
+- (NSMutableArray *)loadCustomObjectWithKey:(NSString *)key {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *encodedObject = [defaults objectForKey:key];
+    NSMutableArray *object = [NSKeyedUnarchiver unarchiveObjectWithData:encodedObject];
+    return object;
+}
+
 - (void)loadInitialData {
     
-    NSData *serialized = [NSKeyedArchiver archivedDataWithRootObject:_toDoItems];
-    [[NSUserDefaults standardUserDefaults] setObject:serialized forKey:@"myKey"];
+//    NSData *serialized = [NSKeyedArchiver archivedDataWithRootObject:_toDoItems];
+//    [[NSUserDefaults standardUserDefaults] setObject:serialized forKey:@"myKey"];
+//    
+//    serialized = [[NSUserDefaults standardUserDefaults] objectForKey:@"myKey"];
+//    _toDoItems = [NSKeyedUnarchiver unarchiveObjectWithData:serialized];
     
-    serialized = [[NSUserDefaults standardUserDefaults] objectForKey:@"myKey"];
-    _toDoItems = [NSKeyedUnarchiver unarchiveObjectWithData:serialized];
-    
-    
+    /*
     TodoItem * item1 =[TodoItem makeTodo:@"Купить молокaaа" completed:YES cretionDate:nil];
     [self.toDoItems addObject:item1];
     TodoItem *item2 = [[TodoItem alloc] init];
@@ -48,7 +85,9 @@
                                                    [numberFormatter stringFromNumber:@(1234.5678)]]
                                        completed:YES
                                      cretionDate:nil]];
-    
+    */
+    self.toDoItems = [self loadCustomObjectWithKey:@"TodoItems"];
+    self.restorationIdentifier = @"TodoList";
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -59,8 +98,10 @@
     }
     return self;
 }
+
 - (IBAction)deleteAction:(id)sender {
-    [self deleteLastItem];
+    //[self deleteLastItem];
+//    [self saveCustomObject:self.toDoItems key:@"TodoItems"];
 }
 
 - (void)deleteLastItem
@@ -68,6 +109,16 @@
     [self.toDoItems removeLastObject];
     [self.tableView reloadData];
 }
+//
+//-(void)viewWillDisappear:(BOOL)animated{
+//    //NSLog(@"Will unload");
+//    [self saveCustomObject:self.toDoItems key:@"TodoItems"];
+//}
+//
+//- (void)viewWillUnload{
+//   NSLog(@"Will unload");
+//     //[self saveCustomObject:self.toDoItems key:@"TodoItems"];
+//}
 
 - (void)viewDidLoad
 {
@@ -79,11 +130,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)viewWillAppear{
-    TodoItem * item =[TodoItem makeTodo:@"Новый элемент" completed:YES cretionDate:nil];
-    [self.toDoItems addObject:item];
 }
 
 - (void)didReceiveMemoryWarning
