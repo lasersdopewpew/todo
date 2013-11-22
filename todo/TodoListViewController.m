@@ -103,6 +103,10 @@
     //[self deleteLastItem];
 //    [self saveCustomObject:self.toDoItems key:@"TodoItems"];
 }
+- (void) appHasGoneInBackground{
+    [self saveCustomObject:self.toDoItems key:@"TodoItems"];
+    NSLog(@"Gone background");
+}
 
 - (void)deleteLastItem
 {
@@ -125,6 +129,11 @@
     [super viewDidLoad];
     self.toDoItems = [[NSMutableArray alloc] init];
     [self loadInitialData];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(appHasGoneInBackground)
+                                                 name:UIApplicationDidEnterBackgroundNotification
+                                               object:nil];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
