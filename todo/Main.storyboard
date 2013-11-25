@@ -15,15 +15,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListPrototypeCell" textLabel="enp-xS-G0x" style="IBUITableViewCellStyleDefault" id="7sJ-AN-Jw0">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ListPrototypeCell" textLabel="enp-xS-G0x" style="IBUITableViewCellStyleDefault" id="7sJ-AN-Jw0">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="42" contentMode="center" tableViewCell="7sJ-AN-Jw0" id="1GK-px-28s">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Купить кота" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="enp-xS-G0x">
-                                            <rect key="frame" x="15" y="0.0" width="290" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                             <gestureRecognizers/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -45,6 +45,9 @@
                                         <constraint firstItem="fDg-51-mKA" firstAttribute="centerY" secondItem="enp-xS-G0x" secondAttribute="centerY" id="h2H-2u-d8D"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="qtD-zU-90b" kind="push" id="gJN-rH-XjL"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell tag="3" contentMode="bottomRight" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Yj2-hp-fC7" rowHeight="147" style="IBUITableViewCellStyleDefault" id="DBd-fV-sXI">
                                 <rect key="frame" x="0.0" y="130" width="320" height="147"/>
@@ -97,6 +100,46 @@
             </objects>
             <point key="canvasLocation" x="92" y="43"/>
         </scene>
+        <!--Todo Detail Controller-->
+        <scene sceneID="ACk-BV-Ket">
+            <objects>
+                <viewController id="qtD-zU-90b" customClass="TodoDetailController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BRc-sF-cyf"/>
+                        <viewControllerLayoutGuide type="bottom" id="u2n-uK-jvo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lvT-xI-GAk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DI5-5X-Cpz">
+                                <rect key="frame" x="84" y="273" width="142" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="PQn-4Y-esx" appends="YES" id="mPa-N1-7mU"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="gxt-YH-xY5"/>
+                    <connections>
+                        <outlet property="label" destination="DI5-5X-Cpz" id="p6N-3h-nJB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c5S-BJ-u8P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="PQn-4Y-esx">
+                    <connections>
+                        <action selector="swipeGes:" destination="qtD-zU-90b" id="Sun-es-h9a"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="618" y="-241"/>
+        </scene>
         <!--Add To Do Item View Controller - Add Item-->
         <scene sceneID="mOE-AP-Wzg">
             <objects>
@@ -147,7 +190,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iKF-aQ-6R8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="st3-Zz-8aR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="999" y="43"/>
+            <point key="canvasLocation" x="1013" y="491"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2ch-NM-TAO">
@@ -183,7 +226,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cvd-nF-sFY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="565" y="43"/>
+            <point key="canvasLocation" x="579" y="491"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

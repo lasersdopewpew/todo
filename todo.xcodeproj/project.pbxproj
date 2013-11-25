@@ -29,6 +29,7 @@
 		04FA9B691821C62F00084C81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04FA9B681821C62F00084C81 /* Main.storyboard */; };
 		841D519B18352F2800FC7B7A /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 841D519918352F2800FC7B7A /* Model.xcdatamodeld */; };
 		8485C433183E548100D216E6 /* car.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8485C432183E548100D216E6 /* car.jpg */; };
+		84CFD8B01843AF4F0083642B /* TodoDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84CFD8AF1843AF4F0083642B /* TodoDetailController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		04FA9B681821C62F00084C81 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		841D519A18352F2800FC7B7A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		8485C432183E548100D216E6 /* car.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = car.jpg; sourceTree = "<group>"; };
+		84CFD8AE1843AF4F0083642B /* TodoDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TodoDetailController.h; path = ../TodoDetailController.h; sourceTree = "<group>"; };
+		84CFD8AF1843AF4F0083642B /* TodoDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TodoDetailController.m; path = ../TodoDetailController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +140,8 @@
 				04DF75D018217BAA0039F2EE /* AppDelegate.h */,
 				04DF75D118217BAA0039F2EE /* AppDelegate.m */,
 				04FA9B681821C62F00084C81 /* Main.storyboard */,
+				84CFD8AE1843AF4F0083642B /* TodoDetailController.h */,
+				84CFD8AF1843AF4F0083642B /* TodoDetailController.m */,
 				042ECE561822072300E700B6 /* TodoListViewController.h */,
 				042ECE571822072300E700B6 /* TodoListViewController.m */,
 				04EEA21E1823B1F400974B12 /* TodoItem.h */,
@@ -301,6 +306,7 @@
 				042ECE581822072300E700B6 /* TodoListViewController.m in Sources */,
 				04EEA2201823B1F400974B12 /* TodoItem.m in Sources */,
 				841D519B18352F2800FC7B7A /* Model.xcdatamodeld in Sources */,
+				84CFD8B01843AF4F0083642B /* TodoDetailController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

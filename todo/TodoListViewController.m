@@ -8,6 +8,7 @@
 
 #import "TodoListViewController.h"
 #import "ToDoItem.h"
+#import "TodoDetailController.h"
 
 @interface TodoListViewController ()
 
@@ -155,6 +156,12 @@
         [self.toDoItems addObject:item];
         [self.tableView reloadData];
     }
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    UITableViewCell * cell =  (UITableViewCell*)sender;
+    TodoDetailController * contr = segue.destinationViewController;
+    contr.passedInfo = [cell text];
 }
 
 #pragma mark - Table view data source
